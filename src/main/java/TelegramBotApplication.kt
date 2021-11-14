@@ -126,10 +126,14 @@ class Bot() : TelegramLongPollingBot() {
                     e.printStackTrace()
                 }
             } else if (update.message.hasPhoto()) {
-                val photoSize = getPhoto(update)
-                if (photoSize != null) {
-                    downloadPhotoByFilePath(getFilePath(photoSize))
-                }
+//                val photoSize = getPhoto(update)
+//                if (photoSize != null) {
+//                    downloadPhotoByFilePath(getFilePath(photoSize))
+//                }
+                execute(SendMessage.builder()
+                        .chatId(chatIdLong.toString())
+                        .text("Моя твоя фото не понимать.")
+                        .build())
 
 
             }
